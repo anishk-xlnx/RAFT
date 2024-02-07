@@ -8,6 +8,8 @@ NAME := XSysmon
 MAJOR = 1
 MINOR = 0
 VERSION = $(MAJOR).$(MINOR)
+LIB_DIR=/usr/lib
+INCLUDE_DIR=/usr/include
 
 all: lib$(NAME).so
 
@@ -21,6 +23,12 @@ lib$(NAME).so: lib$(NAME).so.$(VERSION)
 
 %.o: %.c
 	$(CC) $(CFLAGS) -c -fPIC $(LIBSOURCES)
+
+install:
+	install -d $(LIB_DIR)
+	install -d $(INCLUDE_DIR)
+	install -m 0644 *.h $(INCLUDE_DIR)
+	install -m 0644 lib$(NAME).so $(LIB_DIR)
 
 clean:
 	rm -rf *.o *.so *.so.*
