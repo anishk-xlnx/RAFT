@@ -9,8 +9,8 @@ NAME := xhelper
 MAJOR = 1
 MINOR = 0
 VERSION = $(MAJOR).$(MINOR)
-LIB_DIR=/usr/lib
-INCLUDE_DIR=/usr/include
+LIB_DIR=$(DESTDIR)/usr/lib
+INCLUDE_DIR=$(DESTDIR)/usr/include
 
 all: lib$(NAME).so
 
