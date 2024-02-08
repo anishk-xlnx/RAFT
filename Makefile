@@ -19,4 +19,4 @@ install:
         	$(MAKE) DESTDIR=$(DESTDIR) -C $$dir install; \
 	done
 	install -d $(INSTALL_DIR_RAFT)
-	cp -r * $(DESTDIR)$(INSTALL_DIR_RAFT)
+	cp -r * $(INSTALL_DIR_RAFT)
